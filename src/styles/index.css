@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default: Luxe Theme */
+  --bg-primary: #FDFBF7;
+  /* Cream/Ivory */
+  --text-primary: #2C3E50;
+  /* Dark Blue-Gray */
+  --accent: #5D6D7E;
+  /* Muted Blue-Gray */
+  --card-bg: #FFFFFF;
+  --border-color: #EAECEE;
+  --input-bg: #FAFAFA;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --radius-theme: 4px;
+  /* Slightly rounded */
+
+  /* Rain Color (Luxe) */
+  --rain-color: rgba(93, 109, 126, 0.3);
+}
+
+/* Cute Theme Override */
+body.theme-cute {
+  --bg-primary: #FFF0F5;
+  /* Lavender Blush */
+  --text-primary: #4A4A4A;
+  /* Softer Dark Gray */
+  --accent: #DDA0DD;
+  /* Plum/Pinkish */
+  --card-bg: #FFFFFF;
+  --border-color: #F8C8DC;
+  --input-bg: #FFF5F8;
+  --shadow-soft: 0 8px 25px rgba(255, 105, 180, 0.15);
+  --radius-theme: 16px;
+  /* Rounder */
+
+  /* Rain Color (Cute) */
+  --rain-color: rgba(221, 160, 221, 0.4);
+}
+
+body {
+  @apply bg-bg text-text antialiased transition-colors duration-500 ease-in-out font-sans;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-serif;
+}
+
+body.theme-cute h1 {
+  font-family: 'DM Serif Display', serif;
+}
+
+.input-reset {
+  @apply appearance-none outline-none bg-transparent border-b border-border focus:border-accent transition-all duration-300;
+}
+
+/* Utilities for animations */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
